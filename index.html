@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPE - Recursos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3e5f5; /* Roxo leve */
+            color: #4a148c; /* Roxo escuro para texto */
+        }
+
+        header {
+            background-color: #7e57c2; /* Roxo médio */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #d1c4e9; /* Roxo claro para hover */
+        }
+
+        .banner {
+            background-color: #7e57c2; /* Roxo médio */
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Container para a colmeia */
+        .honeycomb-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Layout de colmeia em coluna */
+        .honeycomb {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Hexágono */
+        .hexagon {
+            width: 200px;
+            height: 230px;
+            background-color: #7e57c2; /* Roxo médio */
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .hexagon:hover {
+            background-color: #9575cd; /* Roxo mais claro para hover */
+        }
+
+        /* Conteúdo dentro do hexágono */
+        .hexagon-content {
+            text-align: center;
+            color: white;
+        }
+
+        .hexagon-content h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .hexagon-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .hexagon-content ul li {
+            margin: 5px 0;
+        }
+
+        .hexagon-content ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hexagon-content ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .hexagon-content button {
+            background-color: #9575cd; /* Roxo mais claro */
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hexagon-content button:hover {
+            background-color: #b39ddb; /* Roxo mais claro para hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #7e57c2; /* Roxo médio */
+            color: white;
+        }
+
+        footer button {
+            background-color: #9575cd; /* Roxo mais claro */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer button:hover {
+            background-color: #b39ddb; /* Roxo mais claro para hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+             <li><a href="https://docs.google.com/spreadsheets/d/1RL2fXJ3K8kGABxhCT4LuQ83A7DfN0Zx4swvUmM2m1yo/edit?gid=0#gid=0">Agenda</a></li>  
+            <li><a href="https://docs.google.com/presentation/d/1rfI7ftOfHSDq34pdniN10qk6FprTRQkdfoJpR8jSyqc/edit#slide=id.p">Calendário de formações</a></li>   
+              <li><a href="https://docs.google.com/presentation/d/18tc6dis5zVkwZfbCZT3MiR-4SoBpuTfxP9JyHcqRSGU/edit#slide=id.p">Calendário</a></li>  
+               <li><a href="https://drive.google.com/drive/folders/1BpT-PtrujD9FjUDYrqKfwMgpcXbpDrRP">Qualidade da Aula e Desenvolvimento Curricular</a></li> 
+                <li><a href="https://drive.google.com/drive/folders/1UNd3ZVIp2FhW1x8I0eQN6u2qtw740uh-" >Planejamento SEDUC 2025</a></li>
+			<li><a href="https://drive.google.com/drive/folders/1f9-bvkS4ywbJZTCHe1N5PmEIrLp4SRIU?usp=sharing">Drive - Ações</a></li>
+			 <li><a href="https://pne-de-cai.github.io/orgonograma-pne/">Desenho do NPE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="banner">
+        <h1>Repositorio NPE</h1>
+     
+    </section>
+
+    <div class="honeycomb-container">
+        <div class="honeycomb">
+            <!-- Seção Sobre -->
+            <div class="hexagon" id="sobre">
+                <div class="hexagon-content">
+                    <h2>Agenda</h2>
+                    <ul>
+                         <li><a href="https://docs.google.com/spreadsheets/d/1RL2fXJ3K8kGABxhCT4LuQ83A7DfN0Zx4swvUmM2m1yo/edit?gid=0#gid=0">Agenda(SEDUC)–NPE</a></li>
+                    </ul>
+                    <button onclick="window.location.href='#home'">Voltar</button>
+                </div>
+            </div>
+
+            <!-- Seção Serviços -->
+            <div class="hexagon" id="servicos">
+                <div class="hexagon-content">
+                    <h2>Calendário formações</h2>
+                    <ul>
+                         <li><a href="https://docs.google.com/presentation/d/1rfI7ftOfHSDq34pdniN10qk6FprTRQkdfoJpR8jSyqc/edit#slide=id.p">Calendário de formações presenciais (SEDUC)</a></li>
+                        
+                    </ul>
+                    <button onclick="window.location.href='#home'">Voltar</button>
+                </div>
+            </div>
+
+            <!-- Seção Portfólio -->
+            <div class="hexagon" id="portfolio">
+                <div class="hexagon-content">
+                    <h2>Calendário pedagógico</h2>
+                    <ul>
+                        <li><a href="https://docs.google.com/presentation/d/18tc6dis5zVkwZfbCZT3MiR-4SoBpuTfxP9JyHcqRSGU/edit#slide=id.p">Calendário</a></li>
+                    </ul>
+                    <button onclick="window.location.href='#home'">Voltar</button>
+                </div>
+            </div>
+
+            <!-- Seção Contato -->
+            <div class="hexagon" id="contato">
+                <div class="hexagon-content">
+                    <h2>PECs </h2>
+                    <ul>
+                        <li><a href="https://drive.google.com/drive/folders/1BpT-PtrujD9FjUDYrqKfwMgpcXbpDrRP">Qualidade da Aula e Desenvolvimento Curricular</a></li>
+                    </ul>
+                    <button onclick="window.location.href='#home'">Voltar</button>
+                </div>
+            </div>
+   <!-- Seção Contato -->
+            <div class="hexagon" id="contato">
+                <div class="hexagon-content">
+                    <h2>Planejamento</h2>
+                    <ul>
+                         <li><a href="https://drive.google.com/drive/folders/1UNd3ZVIp2FhW1x8I0eQN6u2qtw740uh-" >Planejamento SEDUC 2025</a></li>
+                    </ul>
+                    <button onclick="window.location.href='#home'">Voltar</button>
+                </div>
+            </div> 
+ <!-- Seção Contato -->
+            <div class="hexagon" id="contato">
+                <div class="hexagon-content">
+                    <h2>Ações geral</h2>
+                    <ul>
+                         <li><a href="https://drive.google.com/drive/folders/1f9-bvkS4ywbJZTCHe1N5PmEIrLp4SRIU?usp=sharing">Drive - Ações</a></li>
+                    </ul>
+                    <button onclick="window.location.href='#home'">Voltar</button>
+                </div>
+            </div> 
+
+<!-- Seção Contato -->
+            <div class="hexagon" id="contato">
+                <div class="hexagon-content">
+                    <h2>Orgonograma</h2>
+                    <ul>
+                         <li><a href="https://pne-de-cai.github.io/orgonograma-pne/">Desenho do NPE</a></li>
+                    </ul>
+                    <button onclick="window.location.href='#home'">Voltar</button>
+                </div>
+            </div> 
+
+
+ </div>
+    </div>
+
+    <footer>
+        <button onclick="goBack()">Voltar</button>
+        <button onclick="goForward()">Ir</button>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+    </script>
+</body>
+</html>
