@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTROLE DE TAREFAS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0 1rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        button:hover {
+            background-color: #3367d6;
+        }
+        .hidden {
+            display: none;
+        }
+        .secret-links {
+            margin-top: 1.5rem;
+        }
+        .secret-link {
+            display: block;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background-color: #0f9d58;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .secret-link:hover {
+            background-color: #0b8043;
+        }
+        .logout-btn {
+            background-color: #d32f2f;
+        }
+        .logout-btn:hover {
+            background-color: #b71c1c;
+        }
+        .error {
+            color: #d32f2f;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Acesso Restrito</h1>
+        
+        <!-- Formulário de Login -->
+        <div id="login-form">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="senha" required>
+            <button onclick="login()">Entrar</button>
+            <p id="error-message" class="error hidden"></p>
+        </div>
+        
+        <!-- Conteúdo restrito (inicialmente oculto) -->
+        <div id="restricted-content" class="hidden">
+            <h2>Bem-vindo,ao gerenciador de tarefas !</h2>
+            <div class="secret-links">
+			<p>PAINEL DE TAREFAS</p>
+                <a href="https://lookerstudio.google.com/reporting/e83ef4b5-0473-4648-80bb-fb8c7eb87ccf" class="secret-link" target="_blank">GESTÃO DE TAREFAS</a>
+				<P>CADASTRO DE TAREFAS</P>
+                <a href="https://docs.google.com/spreadsheets/d/1NfLwJS4Dl5SAB922p46ZMRdAqtI4d_fiUygm7VANI6Q/edit?usp=sharing" class="secret-link" target="_blank">NAP</a>
+                <a href="https://docs.google.com/spreadsheets/d/1J5899gMq12mLnGj97jO1hnlirC0jlkqZKrkPzltAN9g/edit?usp=sharing" class="secret-link" target="_blank">CRH</a>
+                <a href="https://docs.google.com/spreadsheets/d/1wim1shHFeGkqo6fSsOq7d0ridXK41vjPl_6Rbt5cOzY/edit?usp=sharing" class="secret-link" target="_blank">NFP</a>
+            </div>
+             <button onclick="logout()" class="logout-btn">Sair</button>
+        </div>
+    </div>
+
+    <script>
+        // Credenciais válidas (em um sistema real, isso viria de um banco de dados)
+        const validCredentials = {
+            usuario: "sandro",
+            senha: "123456"
+        };
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            if (username === validCredentials.usuario && password === validCredentials.senha) {
+                // Esconde o formulário de login
+                document.getElementById('login-form').classList.add('hidden');
+                // Mostra o conteúdo restrito
+                document.getElementById('restricted-content').classList.remove('hidden');
+                // Atualiza saudação com nome do usuário
+                document.getElementById('user-greeting').textContent = username;
+                errorMessage.classList.add('hidden');
+            } else {
+                errorMessage.textContent = "Usuário ou senha incorretos!";
+                errorMessage.classList.remove('hidden');
+            }
+        }
+
+        function logout() {
+            // Esconde o conteúdo restrito
+            document.getElementById('restricted-content').classList.add('hidden');
+            // Mostra o formulário de login
+            document.getElementById('login-form').classList.remove('hidden');
+            // Limpa os campos
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+
+        // Impede acesso via tecla Enter sem preencher os campos
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                login();
+            }
+        });
+    </script>
+</body>
+</html>
